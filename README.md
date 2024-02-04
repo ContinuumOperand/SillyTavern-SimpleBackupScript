@@ -25,14 +25,14 @@ Simple and effective batch script to back up your SillyTavern data and settings 
 2. **Run the Batch File:**
    - Double-click `Backup.bat`.
    - Alternatively, open a command prompt, navigate to SillyTavern with `cd`, type `Backup.bat`, and hit Enter.
-   - When it's completed it will look like this if you have your terminal open:
+   - When it's completed it will look something like this if you have your terminal open:
 ```
 7-Zip 23.01 (x64) : Copyright (c) 1999-2023 Igor Pavlov : 2023-06-20
 
 Scanning the drive:
 79 folders, 622 files, 285080677 bytes (272 MiB)
 
-Creating archive: C:\sillytavern\SillyTavern\user-backups\backup_20240204_0416.7z
+Creating archive: C:\SillyTavern\user-backups\backup_20240204_0416.7z
 
 Add new data to archive: 79 folders, 622 files, 285080677 bytes (272 MiB)
 

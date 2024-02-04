@@ -1,47 +1,29 @@
-# Define backup path and filename with current date and time
-$backupPath = Join-Path $PSScriptRoot "user-backups"  # Updated folder name
-$backupFileName = "backup_$(Get-Date -Format 'yyyyMMdd_HHmm')"
-$backupFilePath7z = Join-Path $backupPath "$backupFileName.7z"
-$backupFilePathZip = Join-Path $backupPath "$backupFileName.zip"
+@echo off
+setlocal
 
-# Create backup directory if it doesn't exist
-if (-not (Test-Path $backupPath -PathType Container)) {
-    New-Item -ItemType Directory -Path $backupPath
-}
+:: Set the PowerShell script variables
+set "backupPath=%~dp0user-backups"
+for /f "delims=" %%a in ('wmic OS Get localdatetime ^| find "."') do set "dt=%%a"
+set "backupFileName=backup_%dt:~0,4%%dt:~4,2%%dt:~6,2%_%dt:~8,2%%dt:~10,2%"
+set "backupFilePath7z=%backupPath%\%backupFileName%.7z"
+set "backupFilePathZip=%backupPath%\%backupFileName%.zip"
 
-# Files and directories to include in the backup
-$filesToBackup = @(
-    "public\assets\*",
-    "public\Backgrounds\*",
-    "public\Characters\*",
-    "public\Chats\*",
-    "public\context\*",
-    "public\Group chats\*",
-    "public\Groups\*",
-    "public\instruct\*",
-    "public\KoboldAI Settings\*",
-    "public\movingUI\*",
-    "public\NovelAI Settings\*",
-    "public\OpenAI Settings\*",
-    "public\QuickReplies\*",
-    "public\TextGen Settings\*",
-    "public\themes\*",
-    "public\User Avatars\*",
-    "public\user\*",
-    "public\worlds\*",
-    "public\settings.json",
-    "secrets.json",
-    "config.yaml"
+:: Create backup directory if it doesn't exist
+if not exist "%backupPath%" (
+    mkdir "%backupPath%"
 )
 
-# Check if 7-Zip is available
-$zip7Path = Get-Command 7z.exe -ErrorAction SilentlyContinue
+:: Define files to backup
+set "filesToBackup=public\assets\* "public\Backgrounds\*" "public\Characters\*" "public\Chats\*" "public\context\*" "public\Group chats\*" "public\Groups\*" "public\instruct\*" "public\KoboldAI Settings\*" "public\movingUI\*" "public\NovelAI Settings\*" "public\OpenAI Settings\*" "public\QuickReplies\*" "public\TextGen Settings\*" "public\themes\*" "public\User Avatars\*" "public\user\*" "public\worlds\*" "public\settings.json" "secrets.json" "config.yaml""
 
-if ($zip7Path) {
-    # Use 7-Zip to compress files into a 7-Zip archive
-    & $zip7Path.FullName a -t7z $backupFilePath7z $filesToBackup
-}
-else {
-    # Use Compress-Archive to create a ZIP archive
-    Compress-Archive -Path $filesToBackup -DestinationPath $backupFilePathZip
-}
+:: Check if 7z.exe is available
+where 7z.exe >nul 2>nul
+if %errorlevel% equ 0 (
+    :: Use 7-Zip to create 7z archive
+    7z a -t7z "%backupFilePath7z%" %filesToBackup%
+) else (
+    :: Use Compress-Archive to create zip archive
+    Compress-Archive -Path %filesToBackup% -DestinationPath "%backupFilePathZip%"
+)
+
+endlocal

@@ -19,7 +19,7 @@ Simple and effective batch script to back up your SillyTavern data and settings 
 
 1. **Download and Place:**
    - Get `Backup.bat`, a straightforward batch script for securing your SillyTavern data.
-   - [Download it directly here](https://github.com/ContinuumOperand/SillyTavern-SimpleBackupScript/raw/main/Backup.bat).
+   - [Download it directly here](https://github.com/ContinuumOperand/SillyTavern-SimpleBackupScript/raw/main/Backup.bat). You can right click the link and 'Save As...' to get the `Backup.bat` downloaded, or clone the repository.
    - Drop it into the SillyTavern folder.
 
 2. **Run the Batch File:**

@@ -32,7 +32,7 @@ Simple and effective batch script to back up your SillyTavern data and settings 
 Scanning the drive:
 79 folders, 622 files, 285080677 bytes (272 MiB)
 
-Creating archive: C:\\sillytavern\SillyTavern\user-backups\backup_20240204_0416.7z
+Creating archive: C:\sillytavern\SillyTavern\user-backups\backup_20240204_0416.7z
 
 Add new data to archive: 79 folders, 622 files, 285080677 bytes (272 MiB)
 

@@ -14,7 +14,7 @@ if not exist "%backupPath%" (
 )
 
 :: Define files to backup
-set "filesToBackup=public\assets\* "public\backgrounds\*" "public\characters\*" "public\chats\*" "public\context\*" "public\group chats\*" "public\groups\*" "public\instruct\*" "public\KoboldAI Settings\*" "public\movingUI\*" "public\NovelAI Settings\*" "public\OpenAI Settings\*" "public\QuickReplies\*" "public\TextGen Settings\*" "public\themes\*" "public\User Avatars\*" "public\user\*" "public\worlds\*" "public\settings.json" "secrets.json" "config.yaml""
+set "filesToBackup=public\assets\* "public\backgrounds\*" "public\characters\*" "public\chats\*" "public\context\*" "public\group chats\*" "public\groups\*" "public\instruct\*" "public\KoboldAI Settings\*" "public\movingUI\*" "public\NovelAI Settings\*" "public\OpenAI Settings\*" "public\QuickReplies\*" "public\TextGen Settings\*" "public\themes\*" "public\User Avatars\*" "public\user\*" "public\worlds\*" "public\settings.json" "vectors\*" "secrets.json" "config.yaml""
 
 :: Check if 7z.exe is available
 where 7z.exe >nul 2>nul

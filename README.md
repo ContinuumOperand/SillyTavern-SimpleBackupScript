@@ -5,7 +5,7 @@ Simple and effective batch script to back up your SillyTavern data and settings 
 
 ## Overview
 
-`Backup.bat` is a simple and effective batch script designed exclusively for Windows. As a Batch file, it takes advantage of Windows functionalities to keep your SillyTavern data safe. It efficiently packs your crucial files into a compressed format using either 7-Zip (optional) or built-in compression.
+`Backup.bat` is a simple and effective batch script designed exclusively for Windows. As a Batch file, it takes advantage of Windows functionalities to keep your SillyTavern data safe. It efficiently packs your crucial files into a compressed format using either 7-Zip or built-in compression.
 
 ## Requirements
 

@@ -11,7 +11,7 @@ Simple and effective batch script to back up your SillyTavern data and settings 
 
 1. **Windows Only:** This script is designed exclusively for Windows operating systems. Due to its nature as a Batch file, it will not work on other operating systems.
 
-2. **Get 7-Zip (Optional):** 7-Zip is an optional requirement for additional compression options. Download it [here](https://www.7-zip.org/download.html). If 7-Zip is not installed, the backup script seamlessly switches to using the built-in compression for creating a ZIP file with the same functionality.
+2. **Install 7-Zip:** 7-Zip is used for compression. Download it [here](https://www.7-zip.org/download.html) (**.msi installer**). If 7-Zip is not available, the backup script will try using a built-in Windows compression tool to create a ZIP file with the same functionality. This requires you to run the script in a recent version of PowerShell and can be buggy.
 
 3. **Location Matters:** Place the `Backup.bat` file in your SillyTavern folder.
 

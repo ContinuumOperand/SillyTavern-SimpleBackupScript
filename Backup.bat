@@ -1,3 +1,5 @@
+:: Version 1.12.0 tested
+
 @echo off
 setlocal
 
